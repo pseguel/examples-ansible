@@ -1,8 +1,9 @@
 ---
-name: Cambio de hora
+- name: Cambio de hora
+  hosts: appservers-group
 
   tasks:
-          #- name: Bajar Servicios
+  #- name: Bajar Servicios
   - name: Actualizar paquetes
     yum:
       name: tzdata
