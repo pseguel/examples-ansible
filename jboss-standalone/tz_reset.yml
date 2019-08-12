@@ -1,0 +1,16 @@
+---
+- name: Reset de zona horaria
+  hosts: appservers-group
+
+  tasks:
+  #- name: Bajar Servicios
+  - name: Actualizar paquetes
+    yum:
+      name: tzdata
+      state: tzdata-2016d-1
+
+  - name: Dejar la zona en Santiago 
+    timezone:
+      name: "UTC"
+
+     #- name: Subir Servicios
