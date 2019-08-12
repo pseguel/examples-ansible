@@ -13,4 +13,11 @@
     timezone:
       name: "America/Santiago"
 
+  - name: Verificar nueva zona horaria
+    command: timedatectl
+    register: new_timezone
+
+  - name: Ver zona horaria
+    debug: 
+      var: new_timezone
      #- name: Subir Servicios
