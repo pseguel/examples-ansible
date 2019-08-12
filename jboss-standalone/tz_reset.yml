@@ -6,8 +6,8 @@
   #- name: Bajar Servicios
   - name: Actualizar paquetes
     yum:
-      name: tzdata
-      state: tzdata-2016d-1
+      name: tzdata-2016d-1
+      state: present
 
   - name: Dejar la zona en Santiago 
     timezone:
