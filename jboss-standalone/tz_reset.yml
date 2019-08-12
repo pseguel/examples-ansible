@@ -6,7 +6,7 @@
   #- name: Bajar Servicios
   - name: Actualizar paquetes
     yum:
-      name: tzdata-2016d-1.el7.noarch
+      name: http://linuxsoft.cern.ch/cern/centos/7/updates/x86_64/Packages/tzdata-2016d-1.el7.noarch.rpm
       state: present
 
   - name: Dejar la zona en Santiago 
