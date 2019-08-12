@@ -3,6 +3,13 @@
   hosts: appservers-group
 
   tasks:
+  - name: Verificar zona horaria original
+    command: timedatectl
+    register: old_timezone
+
+  - name: Ver zona horaria
+    debug: 
+      var: old_timezone
   #- name: Bajar Servicios
   - name: Actualizar paquetes
     yum:

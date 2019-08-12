@@ -3,7 +3,14 @@
   hosts: appservers-group
 
   tasks:
-  #- name: Bajar Servicios
+  - name: Verificar zona horaria original
+    command: timedatectl
+    register: old_timezone
+
+  - name: Ver zona horaria
+    debug: 
+      var: old_timezone
+
   - name: Actualizar paquetes
     yum:
       name: http://linuxsoft.cern.ch/cern/centos/7/updates/x86_64/Packages/tzdata-2016d-1.el7.noarch.rpm
@@ -20,5 +27,5 @@
   - name: Ver zona horaria
     debug: 
       var: new_timezone
-      
+
      #- name: Subir Servicios
