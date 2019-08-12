@@ -7,6 +7,11 @@
     command: timedatectl
     register: old_timezone
 
+  - name: Enable JBoss to be started at boot
+    service: 
+      name=jboss
+      state=stopped
+
   - name: Ver zona horaria
     debug: 
       var: old_timezone
@@ -27,4 +32,10 @@
   - name: Ver zona horaria
     debug: 
       var: new_timezone
+
+  - name: Enable JBoss to be started at boot
+    service: 
+      name=jboss
+      state=started
+  
      #- name: Subir Servicios
