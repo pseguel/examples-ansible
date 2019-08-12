@@ -1,0 +1,15 @@
+---
+name: Cambio de hora
+
+  tasks:
+          #- name: Bajar Servicios
+  - name: Actualizar paquetes
+    yum:
+      name: tzdata
+      state: latest
+
+  - name: Dejar la zona en Santiago 
+    timezone:
+      name: "America/Santiago"
+
+     #- name: Subir Servicios
