@@ -16,7 +16,7 @@
       name: http://linuxsoft.cern.ch/cern/centos/7/updates/x86_64/Packages/tzdata-2016d-1.el7.noarch.rpm
       state: present
 
-  - name: Dejar la zona en Santiago 
+  - name: Dejar la zona en UTC 
     timezone:
       name: "UTC"
 
